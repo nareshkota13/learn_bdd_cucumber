@@ -4,25 +4,15 @@ Given(/^I am on homeaway uk home page$/) do
   @homepage.is_current_page?.should == true
 end
 
-
-And(/^I should see search form$/) do
-  pending
-end
-
-
-And(/^I should see quick links$/) do
-  pending
-end
-
-
 When(/^I check for content$/) do
-  pending
+
 end
 
-Then(/^I the title of home page should be homeaway$/) do
-  pending
+Then(/^I the title of home page should be (homeaway)$/) do |title|
+  @homepage.get_title.downcase.include?(title).should == true
 end
 
-And(/^I should see place an ad option$/) do
+
+And(/^I should see (owner login|traveller login|list your property)$/) do |login_type|
   pending
 end
